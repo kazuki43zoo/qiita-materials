@@ -4,12 +4,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.boot.test.TestRestTemplate;
 import org.springframework.boot.test.WebIntegrationTest;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 import java.net.URI;
@@ -24,7 +24,7 @@ public class SpringWebMvcJsonArrayTests {
     @Value("http://localhost:${local.server.port:8080}/api/v1/todos")
     private URI uri;
 
-    private final TestRestTemplate restTemplate = new TestRestTemplate();
+    private final RestTemplate restTemplate = new RestTemplate();
 
     private final List<Todo> requestTodoList = Arrays.asList(
             new Todo("Jsckson勉強会")

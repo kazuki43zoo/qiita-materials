@@ -17,9 +17,9 @@ public class JsonDemoApplication {
         SpringApplication.run(JsonDemoApplication.class, args);
     }
 
-    @RequestMapping(path = "/api/v1/todos", method = RequestMethod.POST)
-    public List<Todo> post(@RequestBody List<Todo> todos) {
-        return todos;
-    }
+@RequestMapping(path = "/api/v1/todos", method = RequestMethod.POST)
+public List<Todo> post(@RequestBody List<Todo> todos) {
+    return todos;
+}
 
 }
