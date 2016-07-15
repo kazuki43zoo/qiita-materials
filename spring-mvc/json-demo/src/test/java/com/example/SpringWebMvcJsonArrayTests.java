@@ -21,7 +21,7 @@ import java.util.List;
 @WebIntegrationTest(randomPort = true)
 public class SpringWebMvcJsonArrayTests {
 
-    @Value("http://localhost:${local.server.port:8080}/api/v1/todos")
+    @Value("http://localhost:${local.server.port}/api/v1/todos")
     private URI uri;
 
     private final RestTemplate restTemplate = new RestTemplate();
