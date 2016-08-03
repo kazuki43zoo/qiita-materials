@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner
 class MybatisKotlinDemoApplicationTests {
 
     companion object {
-        @ClassRule @JvmField final val out = OutputCapture()
+        @ClassRule @JvmField val out = OutputCapture()
     }
 
     @Test
