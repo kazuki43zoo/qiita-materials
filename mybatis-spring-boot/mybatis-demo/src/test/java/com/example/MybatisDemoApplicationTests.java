@@ -3,14 +3,14 @@ package com.example;
 import org.junit.ClassRule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.test.OutputCapture;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.rule.OutputCapture;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.hamcrest.Matchers.containsString;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = MybatisDemoApplication.class)
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class MybatisDemoApplicationTests {
 
     @ClassRule
@@ -24,4 +24,5 @@ public class MybatisDemoApplicationTests {
         out.expect(containsString("DETAILS  : 銀座 19:00"));
         out.expect(containsString("FINISHED : false"));
     }
+
 }
