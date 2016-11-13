@@ -1,0 +1,30 @@
+redis:
+  image: redis
+  ports:
+    - "16379:6379"
+ap1:
+  build: .
+  links:
+    - redis
+  command: >
+    --instance.name=ap1
+ap2:
+  build: .
+  links:
+    - redis
+  command: >
+    --instance.name=ap2
+ap3:
+  build: .
+  links:
+    - redis
+  command: >
+    --instance.name=ap3
+web:
+  build: nginx
+  ports:
+    - "10080:80"
+  links:
+    - ap1
+    - ap2
+    - ap3
