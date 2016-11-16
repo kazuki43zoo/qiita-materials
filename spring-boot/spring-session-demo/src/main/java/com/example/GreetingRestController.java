@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
-import java.net.UnknownHostException;
 import java.util.Date;
 import java.util.Optional;
 
@@ -23,7 +22,7 @@ public class GreetingRestController {
     }
 
     @GetMapping("/hello")
-    public String hello(@RequestParam Optional<String> name) throws UnknownHostException {
+    public String hello(@RequestParam Optional<String> name) {
         if (greetingInfo.getName() == null) {
             greetingInfo.setName(name.orElse("anonymous"));
             greetingInfo.setCreatedAt(new Date());
@@ -33,7 +32,7 @@ public class GreetingRestController {
     }
 
     @GetMapping("/goodbye")
-    public String goodbye(HttpSession session) throws UnknownHostException {
+    public String goodbye(HttpSession session) {
         Optional<String> name = Optional.ofNullable(greetingInfo.getName());
         session.invalidate();
         return "Goodbye " + name.orElse("anonymous") + " (Echo by " + instanceName + ")";
