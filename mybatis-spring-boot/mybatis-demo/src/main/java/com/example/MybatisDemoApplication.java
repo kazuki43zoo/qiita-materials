@@ -2,7 +2,6 @@ package com.example;
 
 import com.example.domain.Todo;
 import com.example.mapper.TodoMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,8 +14,11 @@ public class MybatisDemoApplication implements CommandLineRunner { // CommandLin
         SpringApplication.run(MybatisDemoApplication.class, args);
     }
 
-    @Autowired
-    TodoMapper todoMapper; // Mapperをインジェクションする
+    private final TodoMapper todoMapper;
+
+    public MybatisDemoApplication(TodoMapper todoMapper) {
+        this.todoMapper = todoMapper; // Mapperをインジェクションする
+    }
 
     // Spring Boot起動時にCommandLineRunner#runメソッドが呼び出される
     @Transactional
