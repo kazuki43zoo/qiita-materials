@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.transaction.annotation.Transactional
 
 @SpringBootApplication
-open class MybatisKotlinDemoApplication : CommandLineRunner {
+class MybatisKotlinDemoApplication : CommandLineRunner {
 
     @Autowired
     lateinit var todoMapper: TodoMapper
