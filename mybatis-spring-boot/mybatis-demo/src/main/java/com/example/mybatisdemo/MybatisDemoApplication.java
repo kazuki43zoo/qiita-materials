@@ -1,7 +1,7 @@
-package com.example;
+package com.example.mybatisdemo;
 
-import com.example.domain.Todo;
-import com.example.mapper.TodoMapper;
+import com.example.mybatisdemo.domain.Todo;
+import com.example.mybatisdemo.mapper.TodoMapper;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

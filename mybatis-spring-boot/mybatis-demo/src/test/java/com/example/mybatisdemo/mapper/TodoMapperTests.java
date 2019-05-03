@@ -1,6 +1,6 @@
-package com.example.mapper;
+package com.example.mybatisdemo.mapper;
 
-import com.example.domain.Todo;
+import com.example.mybatisdemo.domain.Todo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mybatis.spring.boot.test.autoconfigure.MybatisTest;

@@ -1,4 +1,4 @@
-package com.example.domain;
+package com.example.mybatisdemo.domain;
 
 public class Todo {
     private int id;

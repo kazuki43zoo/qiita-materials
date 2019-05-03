@@ -1,4 +1,4 @@
-package com.example;
+package com.example.mybatisdemo;
 
 import org.junit.ClassRule;
 import org.junit.Test;
