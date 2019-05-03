@@ -1,4 +1,4 @@
-package com.example
+package com.example.mybatisdemo
 
 import org.hamcrest.Matchers.containsString
 import org.junit.ClassRule

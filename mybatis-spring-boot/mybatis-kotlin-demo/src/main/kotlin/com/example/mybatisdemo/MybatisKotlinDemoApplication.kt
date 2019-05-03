@@ -1,18 +1,14 @@
-package com.example
+package com.example.mybatisdemo
 
-import com.example.domain.Todo
-import com.example.mapper.TodoMapper
-import org.springframework.beans.factory.annotation.Autowired
+import com.example.mybatisdemo.domain.Todo
+import com.example.mybatisdemo.mapper.TodoMapper
 import org.springframework.boot.CommandLineRunner
-import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.runApplication
 import org.springframework.transaction.annotation.Transactional
 
 @SpringBootApplication
-class MybatisKotlinDemoApplication : CommandLineRunner {
-
-    @Autowired
-    lateinit var todoMapper: TodoMapper
+class MybatisKotlinDemoApplication (private val todoMapper: TodoMapper) : CommandLineRunner {
 
     @Transactional
     override fun run(vararg args: String?) {
@@ -32,5 +28,5 @@ class MybatisKotlinDemoApplication : CommandLineRunner {
 }
 
 fun main(args: Array<String>) {
-    SpringApplication.run(MybatisKotlinDemoApplication::class.java, *args)
+    runApplication<MybatisKotlinDemoApplication>(*args)
 }

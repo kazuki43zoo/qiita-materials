@@ -1,6 +1,6 @@
-package com.example.mapper
+package com.example.mybatisdemo.mapper
 
-import com.example.domain.Todo
+import com.example.mybatisdemo.domain.Todo
 import org.apache.ibatis.annotations.Insert
 import org.apache.ibatis.annotations.Mapper
 import org.apache.ibatis.annotations.Options
@@ -15,7 +15,7 @@ interface TodoMapper {
         VALUES
             (#{title}, #{details}, #{finished})
     """)
-    @Options(useGeneratedKeys = true)
+    @Options(useGeneratedKeys = true, keyProperty = "id")
     fun insert(todo: Todo)
 
     @Select("""

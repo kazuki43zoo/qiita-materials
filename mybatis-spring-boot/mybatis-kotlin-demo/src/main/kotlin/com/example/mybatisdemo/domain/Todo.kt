@@ -1,4 +1,4 @@
-package com.example.domain
+package com.example.mybatisdemo.domain
 
 class Todo {
     var id: Int = 0
